@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | simpleATM
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Angela Liu
+// Computer Science I, Period 3
+// 2018.01.26
 
 
 /*
@@ -37,4 +37,15 @@ assert(dollarValueRequested % 20 == 0, "Dollar value requested must be evenly di
 print("ATM will now dispense $20.00 bills to deliver the sum of $\(dollarValueRequested).00")
 
 // Continue with your code here
+
+var dollarValueDue = dollarValueRequested
+repeat {
+    print("$20.00 dispensed")
+    dollarValueDue -= 20
+}while (dollarValueDue >= 20)
+
+
+
+
+
 
