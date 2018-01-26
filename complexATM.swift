@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | complexATM
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Angela Liu
+// Computer Science I, Period 4
+// 2018.01.26
 
 
 /*
@@ -27,4 +27,37 @@
 */
 
 // Continue with your code here
+
+assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
+assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
+let dollarValueRequested = Int(CommandLine.arguments[1])!
+assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
+print("ATM will now dispense $20.00 bills and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
+var dollarValueDue = dollarValueRequested
+repeat {
+    print("$20.00 dispensed")
+    dollarValueDue -= 20
+}while (dollarValueDue >= 20)
+repeat {
+    print("$5.00 dispensed")
+    dollarValueDue -= 5
+}while (dollarValueDue >= 5)
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
