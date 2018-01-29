@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | multiplicationTable
-// John Williams
-// Computer Science I, Period 1
-// 2018.01.23
+// Angela Liu
+// Computer Science I, Period 4
+// 2018.01.26
 
 
 /*
@@ -29,4 +29,52 @@
 */
 
 // Continue with your code here
+
+assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
+assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
+let box = Int(CommandLine.arguments[1])!
+assert(box <= 20)
+let start = 1
+for num1 in start ... box {
+    for num2 in start ... box {
+        if (num1*num2) < 10 {
+            print(terminator: " ")
+        }
+        if (num1*num2) < 100 {
+            print(terminator: " ")
+        }
+        print ("\(num1*num2)", terminator: " ")
+    }
+    print()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
