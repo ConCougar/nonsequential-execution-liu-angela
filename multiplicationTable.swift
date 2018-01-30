@@ -32,18 +32,18 @@
 
 assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
 assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
-let box = Int(CommandLine.arguments[1])!
-assert(box <= 20)
+let boxsize = Int(CommandLine.arguments[1])!
+assert(boxsize <= 20)
 let start = 1
-for num1 in start ... box {
-    for num2 in start ... box {
-        if (num1*num2) < 10 {
+for horizontal in start ... boxsize {
+    for vertical in start ... boxsize {
+        if (horizontal*vertical) < 10 {
             print(terminator: " ")
         }
-        if (num1*num2) < 100 {
+        if (horizontal*vertical) < 100 {
             print(terminator: " ")
         }
-        print ("\(num1*num2)", terminator: " ")
+        print ("\(horizontal*vertical)", terminator: " ")
     }
     print()
 }
