@@ -31,23 +31,49 @@
 assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
 assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 let dollarValueRequested = Int(CommandLine.arguments[1])!
-assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
-print("ATM will now dispense $20.00 bills and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
-var dollarValueDue = dollarValueRequested
-repeat {
-    print("$20.00 dispensed")
-    dollarValueDue -= 20
-}while (dollarValueDue >= 20)
-repeat {
-    print("$5.00 dispensed")
-    dollarValueDue -= 5
-}while (dollarValueDue >= 5)
+//assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
+//print("ATM will now dispense $20.00 bills and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
+//var dollarValueDue = dollarValueRequested
+//repeat {
+//    print("$20.00 dispensed")
+//    dollarValueDue -= 20
+//}while (dollarValueDue >= 20)
+//repeat {
+//    print("$5.00 dispensed")
+//    dollarValueDue -= 5
+//}while (dollarValueDue >= 5)
 
+func atm(dollarValueRequested:Int, denomination:Int) -> Int {
+    var dollarValueRemaining = dollarValueRequested
+    let billsToDispense = dollarValueRequested / denomination
+    for billNumber in (0 ..< billsToDispense) {
+        print("\(billNumber+1)/\(billsToDispense): $\(denomination) dispensed")
+        dollarValueRemaining -= denomination
+    }
+    return dollarValueRemaining
+}
+
+var dollarValueRemaining = dollarValueRequested
+dollarValueRemaining = atm(dollarValueRequested: dollarValueRemaining, denomination: 100)
+dollarValueRemaining = atm(dollarValueRequested: dollarValueRemaining, denomination: 20)
+dollarValueRemaining = atm(dollarValueRequested: dollarValueRemaining, denomination: 5)
+
+/*
+func MoneyOwed(number:Int) -> String {
+    number -= 100
+    print("$100 dispensed")
+    while (number / 100) >= 1
+    
+ func MoneyOwed(number:Int) -> String {
+    print("$20 dispensed")
+    MoneyOwed -= 20
+    while (number / 20) >=1
+ }    
    
 
 
 
-
+*/
 
 
 
