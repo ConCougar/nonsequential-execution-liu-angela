@@ -32,11 +32,11 @@
 
 assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
 assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
-let boxsize = Int(CommandLine.arguments[1])!
-assert(boxsize <= 20)
+let tablesize = Int(CommandLine.arguments[1])!
+assert(tablesize <= 20)
 let start = 1
-for horizontal in start ... boxsize {
-    for vertical in start ... boxsize {
+for horizontal in start ... tablesize {
+    for vertical in start ... tablesize {
         if (horizontal*vertical) < 10 {
             print(terminator: " ")
         }
