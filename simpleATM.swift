@@ -39,10 +39,10 @@ print("ATM will now dispense $20.00 bills to deliver the sum of $\(dollarValueRe
 // Continue with your code here
 
 var dollarValueDue = dollarValueRequested
-repeat {
+while (dollarValueDue >= 20){
     print("$20.00 dispensed")
     dollarValueDue -= 20
-}while (dollarValueDue >= 20)
+}
 
 
 
